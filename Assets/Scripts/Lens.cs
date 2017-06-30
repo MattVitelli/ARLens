@@ -42,11 +42,47 @@ public class Lens : MonoBehaviour {
 		intrinsicsFront = intrinsicsFromFOV (width, height, camFront.fieldOfView);
 		camFront.projectionMatrix = toNDC (intrinsicsFront, width, height, camFront.nearClipPlane, camFront.farClipPlane);
 	}
+
+	void extractRotationTranslation(Matrix4x4 src, out Matrix4x4 rot, out Vector3 trans)
+	{
+		rot = Matrix4x4.identity;
+		rot.m00 = src.m00; rot.m01 = src.m01; rot.m02 = src.m02;
+		rot.m10 = src.m10; rot.m11 = src.m11; rot.m12 = src.m12;
+		rot.m20 = src.m20; rot.m21 = src.m21; rot.m22 = src.m22;
+		trans = new Vector3 (rot.m03, rot.m13, rot.m23);
+	}
 	
 	// Update is called once per frame
 	void Update () {
-		Quaternion rA = camPerson.transform.rotation;
-		Quaternion rB = camFront.transform.rotation;
+		Matrix4x4 Ra;
+		Vector3 tA;
+		extractRotationTranslation (camFront.transform.worldToLocalMatrix, out Ra, out tA);
+		Matrix4x4 Rb;
+		Vector3 tB;
+		extractRotationTranslation (camPerson.transform.worldToLocalMatrix, out Rb, out tB);
+
+		Matrix4x4 Ka = intrinsicsFront;
+		Matrix4x4 Kb = intrinsicsFromFOV (Screen.width, Screen.height, camPerson.fieldOfView);
+		camPerson.projectionMatrix = toNDC (Kb, Screen.width, Screen.height, camPerson.nearClipPlane, camPerson.farClipPlane);
+
+
+		Vector3 N = Rb * plane.transform.forward;
+		float d = Vector3.Dot (N, tB - plane.transform.position);
+		Vector3 deltaP = (tB - tA) / d;
+		Matrix4x4 inner = Matrix4x4.identity;
+		inner.SetRow (0, new Vector4(1,0,0,0) - (new Vector4 (N.x, N.y, N.z, 0) * deltaP.x));
+		inner.SetRow (1, new Vector4(0,1,0,0) - (new Vector4 (N.x, N.y, N.z, 0) * deltaP.y));
+		inner.SetRow (2, new Vector4(0,0,1,0) - (new Vector4 (N.x, N.y, N.z, 0) * deltaP.z));
+		homography = Ka * Ra * (inner * Rb.inverse) * Kb.inverse;
+		screenMat.SetTexture ("_MainTex", camFront.targetTexture);
+		screenMat.SetVector ("_Hba0", homography.GetRow(0));
+		screenMat.SetVector ("_Hba1", homography.GetRow(1));
+		screenMat.SetVector ("_Hba2", homography.GetRow(2));
+		screenMat.SetVector ("_resA", new Vector4(Screen.width, Screen.height,0,0));
+		screenMat.SetVector ("_resB", new Vector4(camFront.targetTexture.width, camFront.targetTexture.height,0,0));
+		/*
+		Quaternion rA = Quaternion.Inverse(camPerson.transform.rotation);
+		Quaternion rB = Quaternion.Inverse(camFront.transform.rotation);
 		Vector3 tA = camPerson.transform.position;
 		Vector3 tB = camFront.transform.position;
 		Vector3 N = plane.transform.forward;
@@ -71,5 +107,6 @@ public class Lens : MonoBehaviour {
 		screenMat.SetVector ("_Hba2", homography.GetRow(2));
 		screenMat.SetVector ("_resA", new Vector4(Screen.width, Screen.height,0,0));
 		screenMat.SetVector ("_resB", new Vector4(camFront.targetTexture.width, camFront.targetTexture.height,0,0));
+		//*/
 	}
 }
