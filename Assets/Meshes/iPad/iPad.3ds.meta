@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 6f2589f83a3bc4da583cad984717be8a
+timeCreated: 1498822904
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: _____
+    100002: _____1
+    100004: __________
+    100006: Back
+    100008: Buttons
+    100010: CHANGEABLE
+    100012: Cube
+    100014: Edge
+    100016: Front
+    100018: Home_Butto
+    100020: iPad
+    100022: //RootNode
+    100024: iPad1
+    100026: iPad2
+    100028: On_Off_Swi
+    100030: Orientatio
+    100032: Plane
+    100034: Screen
+    100036: Speakers
+    100038: Speakers_1
+    100040: TooBig0
+    100042: TooBig1
+    100044: Volume_but
+    400000: _____
+    400002: _____1
+    400004: __________
+    400006: Back
+    400008: Buttons
+    400010: CHANGEABLE
+    400012: Cube
+    400014: Edge
+    400016: Front
+    400018: Home_Butto
+    400020: iPad
+    400022: //RootNode
+    400024: iPad1
+    400026: iPad2
+    400028: On_Off_Swi
+    400030: Orientatio
+    400032: Plane
+    400034: Screen
+    400036: Speakers
+    400038: Speakers_1
+    400040: TooBig0
+    400042: TooBig1
+    400044: Volume_but
+    2300000: _____
+    2300002: _____1
+    2300004: __________
+    2300006: Back
+    2300008: Buttons
+    2300010: CHANGEABLE
+    2300012: Cube
+    2300014: Edge
+    2300016: Front
+    2300018: Home_Butto
+    2300020: iPad
+    2300022: iPad1
+    2300024: iPad2
+    2300026: On_Off_Swi
+    2300028: Orientatio
+    2300030: Plane
+    2300032: Screen
+    2300034: Speakers
+    2300036: Speakers_1
+    2300038: TooBig0
+    2300040: TooBig1
+    2300042: Volume_but
+    3300000: _____
+    3300002: _____1
+    3300004: __________
+    3300006: Back
+    3300008: Buttons
+    3300010: CHANGEABLE
+    3300012: Cube
+    3300014: Edge
+    3300016: Front
+    3300018: Home_Butto
+    3300020: iPad
+    3300022: iPad1
+    3300024: iPad2
+    3300026: On_Off_Swi
+    3300028: Orientatio
+    3300030: Plane
+    3300032: Screen
+    3300034: Speakers
+    3300036: Speakers_1
+    3300038: TooBig0
+    3300040: TooBig1
+    3300042: Volume_but
+    4300000: _____1
+    4300002: _____
+    4300004: __________
+    4300006: iPad
+    4300008: iPad1
+    4300010: iPad2
+    4300012: Screen
+    4300014: CHANGEABLE
+    4300016: Edge
+    4300018: Front
+    4300020: Back
+    4300022: TooBig0
+    4300024: TooBig1
+    4300026: Buttons
+    4300028: Home_Butto
+    4300030: Speakers_1
+    4300032: Speakers
+    4300034: Orientatio
+    4300036: Plane
+    4300038: Cube
+    4300040: On_Off_Swi
+    4300042: Volume_but
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
